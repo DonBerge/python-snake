@@ -42,8 +42,3 @@ class Pantalla:
                 s += c
             s += '\n'
         return s
-
-
-x = Pantalla()
-
-print(x)

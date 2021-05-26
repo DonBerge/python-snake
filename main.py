@@ -16,7 +16,7 @@ def getMove():
       b'd':(1,0),
       b'\x1b': (0,0) # ESC
    }
-   return switch.get(char)
+   return switch.get(char,None)
 
 def clrscr():
    comando_borra_pantalla = "cls" if sys.platform == "win32" else "clear"
@@ -30,10 +30,15 @@ def main():
       print(scr)
       print("Pulsa escape para salir...")
       m = getMove()
+      if(m==None):
+         continue
       if(m==(0,0)):
          return
       else:
-         snk.moveSnake(m)
+         if(not snk.moveSnake(m)):
+            clrscr()
+            print("Perdiste")
+            return
       snk.printSnake()
          
 

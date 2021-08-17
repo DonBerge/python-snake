@@ -1,1 +1,1 @@
-Un snake en python que estoy tratando de codear para aprender python
+A snake game made in python
